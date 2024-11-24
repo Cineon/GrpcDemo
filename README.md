@@ -7,6 +7,9 @@ The server receives a stream of integers from a client, calculates their sum, an
 
 The purpose of this demo is to showcase how to use gRPC for efficient communication in a **streaming scenario**, leveraging the HTTP/2 protocol for high-performance and low-latency communication.
 
+![GrpcDemo.gif](GrpcDemo.gif)
+<br><br>
+
 ## What is gRPC?
 
 gRPC is a modern **Remote Procedure Call (RPC)** framework developed by Google. It enables communication between distributed systems using HTTP/2 as the transport protocol and Protocol Buffers (protobuf) as the data serialization format. gRPC is known for being:

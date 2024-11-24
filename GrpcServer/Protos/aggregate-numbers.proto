@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+option csharp_namespace = "GrpcServer";
+
+service NumberAggregator {
+  // Definition of the method that accepts stream of data from the client and returns a single response
+  rpc CalculateSum (stream NumberRequest) returns (SumResponse);
+}
+
+// Communicat from client containing a number
+message NumberRequest {
+	// int32 is one of Protobuf native scalar value type. His C# equivalent is int
+	// In addition to name, each field in the message definition has a unique number.
+	// Field numbers are used to identify fields when the message is serialized to Protobuf.
+	// Read more at: https://learn.microsoft.com/en-us/aspnet/core/grpc/protobuf?view=aspnetcore-9.0
+	int32 number = 1;
+}
+
+// Response from the server containing a number
+message SumResponse {
+	int32 sum = 1;
+}
+
+// A .proto file is just a blueprint for communication.
+// The files on client and server side don't have to be exact.
+// As they independently generate matching message types and RPC definitions, they can communicate.
+// Still it is best practice to centralize the .proto file.
